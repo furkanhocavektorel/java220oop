@@ -7,6 +7,14 @@ import java.util.List;
 
 public class InsanController {
 
+    public List<Insan> isimeGoreKullaniciGetir(String aramakIstediginizIsim) {
+
+        InsanIsleri insanIsleri= new InsanIsleri();
+
+        return insanIsleri.adaGoreInsanGetir(aramakIstediginizIsim);
+
+    }
+
     public void insanEkle(String ad,String soyad, long tckn){
         InsanIsleri fsadfgasd= new InsanIsleri();
         fsadfgasd.insanEkle(ad,soyad,tckn);
@@ -16,5 +24,6 @@ public class InsanController {
         InsanIsleri insanIsleri= new InsanIsleri();
         return insanIsleri.insanList();
     }
+
 
 }
