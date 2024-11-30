@@ -3,6 +3,7 @@ package service;
 import entity.Kitap;
 import repository.KitapRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class KitapService {
@@ -21,5 +22,20 @@ public class KitapService {
         return kitapRepository.tumKitaplariGetir();
     }
 
+    public List<Kitap> adaGoreKitapAra(String kitapAdi){
+        KitapRepository kitapRepository= new KitapRepository();
+        List<Kitap> kitapList= kitapRepository.tumKitaplariGetir();
+
+        List<Kitap> adaGoreFiltreliList= new ArrayList<>();
+
+        for (Kitap kitap: kitapList){
+
+            if (kitap.kitapAdi.equals(kitapAdi)){
+                adaGoreFiltreliList.add(kitap);
+            }
+
+        }
+        return adaGoreFiltreliList;
+    }
 
 }

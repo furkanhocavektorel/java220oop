@@ -2,6 +2,7 @@ import controller.InsanController;
 import controller.KitapController;
 import db.Veritabani;
 import entity.Insan;
+import entity.Kitap;
 import service.InsanIsleri;
 
 import java.util.Scanner;
@@ -11,16 +12,16 @@ public class Runner {
     // FRONT-END SİM
     public static void main(String[] args) {
 
-        insanEkle();
-        // KULLANICI ADINA GORE KULLANICILARI GETIRME
         Scanner src= new Scanner(System.in);
-        System.out.println("arama adini giriniz");
-        String aramakIstediginizIsim= src.nextLine();
+        kitapEkle();
 
-        InsanController insanController= new InsanController();
+        System.out.println("kitap adi giriniz");
+        String  kitapAdi= src.nextLine();
 
-        for (Insan insan: insanController.isimeGoreKullaniciGetir(aramakIstediginizIsim)){
-            System.out.println(insan.ad+","+insan.soyad);
+        KitapController kitapController = new KitapController();
+
+        for (Kitap k: kitapController.adaGoreAra(kitapAdi)){
+            System.out.println(k.kitapAdi+","+k.basimYili);
         }
 
     }
@@ -48,5 +49,25 @@ public class Runner {
 
     }
 
+    public static void kitapEkle(){
+        Kitap kitap= new Kitap();
+        kitap.kitapAdi="lotr";
+        kitap.yazar="tolkien";
+        kitap.basimYili=1970;
+
+        Kitap kitap2= new Kitap();
+        kitap2.kitapAdi="lotr";
+        kitap2.yazar="tolkien";
+        kitap2.basimYili=1975;
+
+        Kitap kitap3= new Kitap();
+        kitap3.kitapAdi="melekler ve seytanlar";
+        kitap3.yazar="dan brown";
+        kitap3.basimYili=2008;
+
+        Veritabani.kitaplar.add(kitap);
+        Veritabani.kitaplar.add(kitap2);
+        Veritabani.kitaplar.add(kitap3);
+    }
 
 }

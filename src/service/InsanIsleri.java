@@ -27,19 +27,13 @@ public class InsanIsleri {
 
     public List<Insan> adaGoreInsanGetir(String aramakIstediginizIsim) {
         InsanRepository insanRepository= new InsanRepository();
-
         List<Insan> insanlar= insanRepository.insanList();
-
         List<Insan> adaGoreFiltreliInsanlar= new ArrayList<>();
-
         for (Insan i : insanlar ){
-
             if (i.ad.equals(aramakIstediginizIsim)){
                adaGoreFiltreliInsanlar.add(i);
             }
-
         }
-
         return adaGoreFiltreliInsanlar;
     }
 

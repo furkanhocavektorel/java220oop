@@ -19,7 +19,10 @@ public class KitapController {
         List<Kitap> kitappp= kitapService.tumKitaplarıGetir();
         return kitappp;
     }
-
+    public List<Kitap> adaGoreAra(String kitapAdi){
+        KitapService kitapService= new KitapService();
+        return kitapService.adaGoreKitapAra(kitapAdi);
+    }
 
 
 }
