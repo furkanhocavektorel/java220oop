@@ -1,10 +1,12 @@
+package entity;
+
 public class Insan {
 
-    String ad;
-    String soyad;
-    Long TCKN;
-    double boy;
-    double kilo;
+    public String ad;
+    public String soyad;
+    public Long TCKN;
+    public double boy;
+    public double kilo;
 
 
 
@@ -17,7 +19,7 @@ public class Insan {
     * class,enum,interface
     * HayvanIsleri
     * Hayvan
-    * Insan
+    * ozellikler.Insan
     * */
 
     /*
