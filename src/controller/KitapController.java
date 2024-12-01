@@ -6,21 +6,17 @@ import service.KitapService;
 import java.util.List;
 
 public class KitapController {
-
+    KitapService kitapService= new KitapService();
 
     public void kitapEkle(String kitapAdi,String yazar){
-
-        KitapService kitapService= new KitapService();
         kitapService.kitapKaydet(kitapAdi,yazar);
     }
 
     public List<Kitap> tümKitaplariGetir(){
-        KitapService kitapService = new KitapService();
         List<Kitap> kitappp= kitapService.tumKitaplarıGetir();
         return kitappp;
     }
     public List<Kitap> adaGoreAra(String kitapAdi){
-        KitapService kitapService= new KitapService();
         return kitapService.adaGoreKitapAra(kitapAdi);
     }
 

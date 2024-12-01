@@ -10,19 +10,20 @@ import java.util.Scanner;
 public class Runner {
 
     // FRONT-END SİM
+
+    // OOP PRENSIPLERI
     public static void main(String[] args) {
 
+        insanEkle();
         Scanner src= new Scanner(System.in);
-        kitapEkle();
 
-        System.out.println("kitap adi giriniz");
-        String  kitapAdi= src.nextLine();
+        System.out.println("aramak isteğiniz TCKN");
+        long tckn= src.nextLong();
 
-        KitapController kitapController = new KitapController();
+        InsanController insanController= new InsanController();
+        Insan insan=insanController.tcknyeGoreArama(tckn);
 
-        for (Kitap k: kitapController.adaGoreAra(kitapAdi)){
-            System.out.println(k.kitapAdi+","+k.basimYili);
-        }
+        System.out.println(insan.ad+", "+insan.soyad+", "+insan.TCKN);
 
     }
 

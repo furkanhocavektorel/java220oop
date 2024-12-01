@@ -6,4 +6,5 @@ public class Kitap {
     public int sayfaSayisi;
     public String yazar;
     public int basimYili;
+    public String ISNB;
 }

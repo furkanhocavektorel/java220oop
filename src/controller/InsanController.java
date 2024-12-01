@@ -6,21 +6,22 @@ import service.InsanIsleri;
 import java.util.List;
 
 public class InsanController {
+    InsanIsleri insanIsleri= new InsanIsleri();
 
     public List<Insan> isimeGoreKullaniciGetir(String aramakIstediginizIsim) {
-        InsanIsleri insanIsleri= new InsanIsleri();
         return insanIsleri.adaGoreInsanGetir(aramakIstediginizIsim);
     }
 
     public void insanEkle(String ad,String soyad, long tckn){
-        InsanIsleri fsadfgasd= new InsanIsleri();
-        fsadfgasd.insanEkle(ad,soyad,tckn);
+        insanIsleri.insanEkle(ad,soyad,tckn);
     }
 
     public List<Insan> insanList(){
-        InsanIsleri insanIsleri= new InsanIsleri();
         return insanIsleri.insanList();
     }
 
+    public Insan tcknyeGoreArama(long tckn){
+        return insanIsleri.tcknyeGoreInsanGetir(tckn);
+    }
 
 }
